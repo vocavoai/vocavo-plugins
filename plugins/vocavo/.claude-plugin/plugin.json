@@ -1,0 +1,23 @@
+{
+    "name": "vocavo",
+    "description": "vocavo – Websites und Landingpages, die Anfragen bringen, für Dienstleister: bauen, umziehen und pflegen im Gespräch mit Claude oder ChatGPT. / Websites and landing pages that bring leads, for service businesses: built, migrated and run by talking to Claude or ChatGPT.",
+    "version": "1.3.0",
+    "author": {
+        "name": "vocavo",
+        "url": "https://vocavo.pro"
+    },
+    "homepage": "https://vocavo.pro",
+    "license": "proprietary",
+    "keywords": [
+        "website",
+        "landing-page",
+        "leads",
+        "lead-generation",
+        "website-migration",
+        "seo",
+        "service-business",
+        "mcp",
+        "claude-plugin",
+        "codex-plugin"
+    ]
+}

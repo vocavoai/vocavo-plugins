@@ -1,0 +1,20 @@
+{
+    "name": "vocavo",
+    "interface": {
+        "displayName": "vocavo"
+    },
+    "plugins": [
+        {
+            "name": "vocavo",
+            "source": {
+                "source": "local",
+                "path": "./plugins/vocavo"
+            },
+            "policy": {
+                "installation": "AVAILABLE",
+                "authentication": "ON_INSTALL"
+            },
+            "category": "Business"
+        }
+    ]
+}
