@@ -91,6 +91,8 @@ Read everything back and check: names, URL, parameters, budget, status paused. E
 
 ## Gate 10: preview and live
 
+The page must be on the address the ads will use before they run: on the owner's own domain that is `go-live` (domain active, main address switched, the ads' URL with the gate 7 parameters on that domain). Ads that already run on the platform host get the new URL there too, each with a yes.
+
 Show the owner each ad as it will appear (the connector's preview link if it has one, else image and texts), the daily budget and what it costs per week. Ask with the owner's budget: "Soll ich die Kampagne mit <Budget> € pro Tag einschalten?" Only a clear yes to that question (or the playbook's "ads-create" scope, which covers creating and switching on, within its budget cap) switches campaign, ad set and ads on; anything vaguer ("sieht gut aus") gets the question again. Read back that they are active. Evidence: yes and time.
 
 ## Gate 11: first review

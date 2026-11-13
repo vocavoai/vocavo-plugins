@@ -30,7 +30,7 @@ Read, never write:
 
 | Line | Call | Say |
 |---|---|---|
-| Pages | `manage-site` `overview` | websites, live or draft, landing pages and their public URL |
+| Pages | `manage-site` `overview`, `manage-account` `domain-status` | websites, live or draft, landing pages and their public URL; own domains and their status ("go.firma.de wartet auf DNS") |
 | Tracking | `manage-conversions` `status` | its eight stages in one line ("Banner und Pixel ok, Server-Events nicht eingerichtet, Stripe-Käufe nicht eingerichtet, HubSpot ok") |
 | Ads | your own tool list | "Meta-Anzeigen-Connector verbunden" or "kein Anzeigen-Connector" (see below) |
 | Lead hand-off | `manage-lead-sync` `status` | CRM connected and last delivery, else mail recipient or webhook |
@@ -58,6 +58,7 @@ Then the one next step you recommend, as a question ("Soll ich die Meta-Server-E
 | "Ich will eine Landingpage und die bewerben", a new campaign | `launch-campaign` |
 | a page only, no ads | `landing-page`; an old page to move: `migrate-website` |
 | "Ist die Seite gut?", before anyone sees a page | `page-quality` |
+| "Live gehen", "eigene Domain", "Domain verbinden", "DNS umstellen" | `go-live` |
 | "Funktioniert unser Tracking?" | `tracking-check` |
 | "Wie liefen die Anzeigen?", "heute", "die letzten sechs Stunden" | `performance-review` |
 | "Neue Creatives", raw video for ads | `ad-creatives` |

@@ -15,7 +15,7 @@ House rules (`start-here`): playbook first and it wins; nothing live without a y
 
 **Subagents.** If your client can start them, run the phases as `migrate-website-agents` describes; the review is always done by an agent that did not build.
 
-**Scope.** Ends with an approved site whose pages are published in the engine, reachable on its preview link and its platform host `<label>.<site domain>`, redirects imported, the lead path tested. Own domains: `manage-account` `add-custom-domain` stores the domain, but DNS and certificates are not part of vocavo yet; say so and never touch DNS. Further checks: `go-live-checklist`.
+**Scope.** Ends with an approved site whose pages are published in the engine, reachable on its preview link and its platform host `<label>.<site domain>`, redirects imported, the lead path tested. Own domain, DNS switch and the checks around going live: `go-live` (vocavo checks DNS and issues the certificate itself; the owner sets one or two records). Never change DNS yourself.
 
 **What the engine does not have.** No file upload (images come through a public URL), no SVG import, no self-hosted video files (YouTube and Vimeo work through the `video` block), no shop or checkout, no booking calendar, no member area, no countdown that resets per visitor, no custom scripts in themes. Say so early when the old page depends on one, propose the closest way (an external link stays an external link), and let the operator decide.
 
@@ -118,7 +118,7 @@ Needed when the old domain or paths will lead to the new site. Every URL of `url
 - Same content → `page:<id>`. A thank-you page → its new thank-you page. Nothing fitting → ask the operator about 410.
 - Never everything to `/`. No rows for paths the engine answers (`/robots.txt`, `/sitemap.xml`, `/llms.txt`).
 - Show the table (old → new → type) and get approval; `manage-site` `import-redirects` (`redirects`: `[{from, to, status_code?, note?}]`) without `confirmed`, fix every error row, then `confirmed: true`.
-- Keep the 301 rows as `redirects.csv` (`old,new`) for `go-live-checklist`.
+- Keep the 301 rows as `redirects.csv` (`old,new`) for `go-live` (its `verify-redirects.py` checks them on the new domain).
 
 ## 8. Check: side by side
 
@@ -133,7 +133,7 @@ Needed when the old domain or paths will lead to the new site. Every URL of `url
 ## 9. Publish and hand over
 
 1. With the operator's yes: `manage-site` `publish-all` (or `manage-site` `publish-page`), `manage-site` `publish-theme` and `manage-site` `switch-theme` if not done.
-2. Hand over the signed preview link and the platform host `https://<label>.<site domain>`, which serves the site once the operator switches it live (`manage-site` `update-website` `status: "live"`, only with their yes; see `go-live-checklist`).
+2. Hand over the signed preview link and the platform host `https://<label>.<site domain>`, which serves the site once the operator switches it live (`manage-site` `update-website` `status: "live"`, only with their yes). Moving the old domain over: `go-live`.
 3. Report: what moved, the call-to-action map with the new targets, forms and where their leads go, tracking decisions, the problems of the old page and how each was decided, parity gaps, open questions, PageSpeed before and now if measured (never estimate a number).
 4. **Offer the challenger.** For a page moved 1:1, propose one improved variant next to it: the single change the inventory, the quality report and the review point to most (a clearer hero promise, a shorter form, proof next to the button, a fixed mobile problem the old page had). With a yes, `landing-page-tests` builds it as a draft and shows both side by side; the test starts once the 1:1 page is live and the owner agrees.
 5. Before ads point to the new page: `tracking-check` and, for a CRM, `lead-handoff`.
